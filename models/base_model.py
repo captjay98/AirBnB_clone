@@ -5,6 +5,7 @@ for other classes"""
 
 from datetime import datetime
 from uuid import uuid4
+from models import storage
 
 
 class BaseModel:
@@ -24,6 +25,8 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
 
+        self.storage = storage
+
     def __str__(self):
         """Returns the string representation of BaseModel object"""
         return f"[{self.__class__.__name__}] (<{self.id}>) <{self.__dict__}>"
@@ -31,6 +34,7 @@ class BaseModel:
     def save(self):
         """Updates datetime of instance to current time"""
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """Returns a dict representation"""
