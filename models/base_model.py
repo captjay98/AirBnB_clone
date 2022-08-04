@@ -10,9 +10,19 @@ from datetime import datetime
 class BaseModel:
     """Creates a BaseModel Class"""
 
-    id = str(uuid4())
-    created_at = datetime.now()
-    updated_at = datetime.now()
+    def __init__(self, *args, **kwargs):
+        """Creates a BaseModel from Dict Representation"""
+
+        if kwargs:
+            for k, v in kwargs.items():
+                if k != '__class__':
+                    setattr(self, k, v)
+                if k in ["created_at", "updated_at"]:
+                    setattr(self, k, datetime.fromisoformat(v))
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """Returns string representation"""
