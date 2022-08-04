@@ -3,7 +3,16 @@
 
 
 import cmd
+from models.base_model import BaseModel
+from models import storage
 
+classes = ["BaseModel",
+            "User",
+            "Place",
+            "State",
+            "City",
+            "Amenity",
+            "Review"]
 
 class HBNBCommand(cmd.Cmd):
     """the HBNB cmd interpreter"""
@@ -28,30 +37,33 @@ class HBNBCommand(cmd.Cmd):
         """Creates new instance of BaseModel,
         saves it to json and prints Id"""
 
-        pass
+        if not arg:
+            print("** class name missing **")
+        elif arg not in classes:
+            print("** class doesn't exist **")
+        else:
+            new_instance = (eval(arg)())
+            new_instance.save()
+            print(new_instance.id)
 
     def do_show(self, arg):
         """Prints string representation of an
         instance based on class name and id"""
-
         pass
 
     def do_destroy(self, arg):
         """Deletes an instance based on classname and id"""
-
         pass
 
     def do_all(self, arg):
         """prints all string representation of all instances
         based or not on the class name"""
-
         pass
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id
         by adding or updating attribute
         and save the change into the JSON file"""
-
         pass
 
 
