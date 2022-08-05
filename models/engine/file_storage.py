@@ -2,10 +2,8 @@
 """class that serializes and deserializes
 intances to and from JSON"""
 
-from json import loads, dumps, dump
+from json import load, dumps, dump
 from os.path import exists
-
-from yaml import load
 
 
 class FileStorage:
