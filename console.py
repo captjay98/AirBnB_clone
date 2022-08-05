@@ -49,7 +49,17 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, arg):
         """Prints string representation of an
         instance based on class name and id"""
-        pass
+        #print string representation based on classname and id
+
+        #if cls name is missing print ** class name missing **
+        if not arg:
+            print("** class name missing **")
+        #if cls name doesnt exist print ** class doesn't exist **
+        elif arg not in classes:
+            print("** class doesn't exist **")
+        #if id is missing print ** instance id missing **
+        elif len(arg) < 2:
+            print("** instance id missing **")
 
     def do_destroy(self, arg):
         """Deletes an instance based on classname and id"""
