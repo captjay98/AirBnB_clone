@@ -4,7 +4,7 @@ common attributes/methods for other classes"""
 
 from uuid import uuid4
 from datetime import datetime
-import models
+
 
 
 class BaseModel:
@@ -13,11 +13,12 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """initialize a BaseModel"""
 
+        from models import storage
         if not kwargs:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            models.storage.new(self)
+            storage.new(self)
         else:
             for k, v in kwargs.items():
                 if k != '__class__':
@@ -32,6 +33,7 @@ class BaseModel:
 
     def save(self):
         """updates to the current time and saves to json"""
+        from models import storage
         self.updated_at = datetime.now()
         models.storage.save()
 
