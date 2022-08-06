@@ -2,7 +2,7 @@
 """class that serializes and deserializes
 intances to and from JSON"""
 
-from json import load, dumps, dump
+from json import load, dump
 from os.path import exists
 
 
@@ -14,7 +14,7 @@ class FileStorage:
 
     def all(self):
         """ returns the dictionary __objects"""
-        return self.__dict__
+        return FileStorage.__objects
 
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.id"""
@@ -37,7 +37,7 @@ class FileStorage:
         if (exists(FileStorage.__file_path)):
             with open(FileStorage.__file_path, 'r') as f:
                 my_dic = load(f)
-                for obj in my_dic.v():
+                for obj in my_dic.values():
                     self.new(eval(obj["__class__"])(**obj))
         else:
             pass

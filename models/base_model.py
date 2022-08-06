@@ -5,6 +5,8 @@ common attributes/methods for other classes"""
 
 from uuid import uuid4
 from datetime import datetime
+
+from pyrsistent import m
 from models import storage
 
 
@@ -28,8 +30,8 @@ class BaseModel:
 
     def __str__(self):
         """Returns string representation"""
-        return (f"[<{self.__class__.__name__}>]"
-                f"<({self.id}>) <{self.__dict__}>")
+        return (f"[{self.__class__.__name__}] "
+                f"({self.id}) {self.__dict__}")
 
     def save(self):
         """updates to the current time and saves to json"""
