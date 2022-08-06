@@ -11,7 +11,7 @@ class BaseModel:
     """Creates a BaseModel Class"""
 
     def __init__(self, *args, **kwargs):
-        """initialize a BaseModel from Dict Representation"""
+        """initialize a BaseModel"""
 
         if args:
             pass
