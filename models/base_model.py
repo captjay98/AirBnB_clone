@@ -5,16 +5,14 @@ common attributes/methods for other classes"""
 
 from uuid import uuid4
 from datetime import datetime
-
-from pyrsistent import m
-from models import storage
+import models
 
 
 class BaseModel:
     """Creates a BaseModel Class"""
 
     def __init__(self, *args, **kwargs):
-        """Creates a BaseModel from Dict Representation"""
+        """initialize a BaseModel from Dict Representation"""
 
         if kwargs:
             for k, v in kwargs.items():
@@ -26,7 +24,7 @@ class BaseModel:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            storage.new(self)
+            models.storage.new(self)
 
     def __str__(self):
         """Returns string representation"""
@@ -36,16 +34,15 @@ class BaseModel:
     def save(self):
         """updates to the current time and saves to json"""
         self.updated_at = datetime.now()
-        storage.save()
+        models.storage.new(self)
+        models.storage.save()
 
     def to_dict(self):
         """Returns a dictionary of all key/value pairs"""
         my_dict = self.__dict__.copy()
-        for k, v in my_dict.items():
-            if k in ["created_at", "updated_at"]:
-                my_dict[k] = v
-
         my_dict["__class__"] = self.__class__.__name__
-        my_dict["updated_at"] = self.updated_at.isoformat()
-        my_dict["created_at"] = self.created_at.isoformat()
+        for k, v in self.__dict__.items():
+            if k in ["created_at", "updated_at"]:
+                v =  self.__dict__[k].isoformat()
+                my_dict[k] = v
         return my_dict
