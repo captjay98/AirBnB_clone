@@ -7,12 +7,13 @@ from models.base_model import BaseModel
 from models import storage
 
 classes = ["BaseModel",
-            "User",
-            "Place",
-            "State",
-            "City",
-            "Amenity",
-            "Review"]
+           "User",
+           "Place",
+           "State",
+           "City",
+           "Amenity",
+           "Review"]
+
 
 class HBNBCommand(cmd.Cmd):
     """the HBNB cmd interpreter"""
@@ -26,7 +27,7 @@ class HBNBCommand(cmd.Cmd):
         raise SystemExit
 
     def do_EOF():
-        """Program exits v using EOF"""
+        """Program exits using EOF"""
         return True
 
     def emptyline(self):
@@ -49,17 +50,22 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, arg):
         """Prints string representation of an
         instance based on class name and id"""
-        #print string representation based on classname and id
-
-        #if cls name is missing print ** class name missing **
         if not arg:
             print("** class name missing **")
-        #if cls name doesnt exist print ** class doesn't exist **
-        elif arg not in classes:
-            print("** class doesn't exist **")
-        #if id is missing print ** instance id missing **
-        elif len(arg) < 2:
-            print("** instance id missing **")
+        else:
+            argv = arg.split(' ')
+
+            if argv[0] not in classes:
+                print("** class doesn't exist **")
+            elif len(argv) < 2:
+                print("** instance id missing **")
+            else:
+                key = argv[0] + "." + argv[1]
+                if key in storage.all():
+                    new = storage.all()[key]
+                    print(new)
+                else:
+                    print("** no instance found **")
 
     def do_destroy(self, arg):
         """Deletes an instance based on classname and id"""
