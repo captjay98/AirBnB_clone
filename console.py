@@ -3,7 +3,6 @@
 
 
 import cmd
-import string
 from models.base_model import BaseModel
 from models import storage
 
