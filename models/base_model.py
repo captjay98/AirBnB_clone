@@ -2,7 +2,6 @@
 """BaseModel class that defines all
 common attributes/methods for other classes"""
 
-
 from uuid import uuid4
 from datetime import datetime
 import models
@@ -14,6 +13,8 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """initialize a BaseModel from Dict Representation"""
 
+        if args:
+            pass
         if kwargs:
             for k, v in kwargs.items():
                 if k != '__class__':
@@ -28,13 +29,12 @@ class BaseModel:
 
     def __str__(self):
         """Returns string representation"""
-        return (f"[{self.__class__.__name__}] "
-                f"({self.id}) {self.__dict__}")
+        return("[{}] ({}) {}".format(self.__class__.__name__,
+                                    self.id, self.__dict__))
 
     def save(self):
         """updates to the current time and saves to json"""
         self.updated_at = datetime.now()
-        models.storage.new(self)
         models.storage.save()
 
     def to_dict(self):
