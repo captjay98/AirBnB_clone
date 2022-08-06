@@ -1,44 +1,49 @@
 #!/usr/bin/python3
-"""BaseModel class that defines all
-common attributes/methods for other classes"""
+"""
+BaseModel class that defines all
+common attributes/methods for other classes
+"""
 
 from uuid import uuid4
 from datetime import datetime
 
 
-
 class BaseModel:
-    """Creates a BaseModel Class"""
+    """
+    Creates a BaseModel Class that
+    other classes will inherit from
+    """
 
     def __init__(self, *args, **kwargs):
-        """initialize a BaseModel"""
+        """initialize a BaseModel object"""
 
         from models import storage
-        if not kwargs:
+        if kwargs:
+            for k, v in kwargs.items():
+                if k != '__class__':
+                    if k in ["created_at", "updated_at"]:
+                        setattr(self, k, datetime.fromisoformat(v))
+                    else:
+                        setattr(self, k, v)
+        else:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             storage.new(self)
-        else:
-            for k, v in kwargs.items():
-                if k != '__class__':
-                    setattr(self, k, v)
-                if k in ["created_at", "updated_at"]:
-                    setattr(self, k, datetime.fromisoformat(v))
 
     def __str__(self):
-        """Returns string representation"""
+        """Returns string representation of the object"""
         return ("[{}] ({}) {}".format(self.__class__.__name__,
-                                     self.id, self.__dict__))
+                                      self.id, self.__dict__))
 
     def save(self):
         """updates to the current time and saves to json"""
         from models import storage
         self.updated_at = datetime.now()
-        models.storage.save()
+        storage.save()
 
     def to_dict(self):
-        """Returns a dictionary of all key/value pairs"""
+        """Returns a dictionary of all key/value pairs of the instance"""
         my_dict = self.__dict__.copy()
         my_dict["__class__"] = self.__class__.__name__
         for k, v in self.__dict__.items():
