@@ -13,8 +13,6 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """initialize a BaseModel"""
 
-        if args:
-            pass
         if not kwargs:
             self.id = str(uuid4())
             self.created_at = datetime.now()
