@@ -26,7 +26,7 @@ Unittest moodule was used in the project.
 # Length of files
 
 
-Length of files were tested using wc
+Length of files were tested using wc.
 
 # Function Documentation 
 
