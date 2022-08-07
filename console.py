@@ -43,8 +43,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """Creates new instance of BaseModel,
-        saves it to json and prints Id"""
+        """Creates a new BaseModel instance, saves it to json, and prints the Id."""
 
         if not arg:
             print("** class name missing **")
