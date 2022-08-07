@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Amenity class that derives from Base class."""
+"""Amenity class that derives from Base class."""
 
 from models.base_model import BaseModel
 
