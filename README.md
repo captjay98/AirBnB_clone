@@ -1,174 +1,67 @@
-# printf
+# AirBnB Clone
 
 # Welcome
 
-This is our take on the printf function in C, it is a project for the ALX Africa Software Engineering Program. we were asked to build a _printf function capable of printing with the %d, %c, %s, and %% specifiers to standard output. 
+This is our take on the AirBnB clone written in python, it is a project for the ALX Africa Software Engineering Program. we were asked to build a command interpreter to manage AirBnB objects.
 
-We added %x ,%X, %b, %o, %u, %r, %R, and %p formatting. We relied on the library we have been building at Alx as well as new concepts gathered during this project.
-# Supported Format Types
-TYPE - OUTPUT
+# Allowed editors 
 
-%c - Single character
+Allowed editors are vi,vim and emacs
 
-%s - String of character
+# First line of each file
 
-%d - Integer in decimal
 
-%i - integer
+The first line of all our files are exactly #!/usr/bin/python3
 
-%u - unsigned integer
+# Test files
 
-%p - pointer address
 
-%% - Percent sign
+All test files are inside the folder tests
 
-%r - String in reverse
+# Module
 
-%R - String in rot13
 
-%x - Lowercase hex(loervase)
+Unittest moodule was used in the project
 
-%X - Uppercase hex (unsigned)
+# Length of files
 
-%b -  signed binary
 
-%o -  signed octal
+Length of files were tested using wc
 
-# Example
+# Function Documentation 
 
-Character: printf("%c", I); Output = I
 
-Integer: printf("%i", 22); Output: 22
+python3 -c 'print(__import__("my_module").my_function.__doc__)' 
+python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
 
-String: printf("%s", HELLO world.); Output = HELLO world.
+# Module documentation
 
-# File Functions
 
-_printf.c
-Printf Function That Performs Formatted Output Conversion And Prints Data.
+python3 -c 'print(__import__("my_module").__doc__)'
 
- # main.h
-Header File Were All Prototypes Are Saved.
+# Class documention
 
-# get_print_func.c
-Pointer To A Function That Selects The Correct Function To Perform The Operation.
 
-# print_buf.c
-Function That Prints The Buffer.
+python3 -c 'print(__import__("my_module").MyClass.__doc__)'
 
-# handl_buf.c
-Function That Concatenates The Buffer Characters.
+# File Execution
 
-# print_chr.c
-Function That Writes The Character C To Stdout.
 
-/* Indetifier : %c */
-# print_str.c
-Function That Writes The String To Stdout.
+All files are executed using this command: python3 -m unittest discover tests
 
-/* Indetifier : %s */
-# print_int.c
-Function That Prints An Integer.
+# File extension
 
-/* Indetifier : %i or %d */
-# print_bnr.c
-Function That Prints Decimal In Binary.
 
-/* Indetifier : %b */
-# print_oct.c
-Function That Prints Decimal In Octal.
+File extension is .py
 
-/* Indetifier : %o */
-# print_hex.c
-Function That Prints Decimal In Hexadecimal.
+# Non-interactive mode
 
-/* Indetifier : %x */
-# print_upx.c
-Function That Prints Decimal In Uppercase Hexadecimal.
+All tests also pass in non-interactive mode: $ echo "python3 -m unittest discover tests" | bash
 
-/* Indetifier : %X */
-# print_usr.c
-Function That Prints A String And Values Of Non-Printed Chars.
+# Interpretion and compilation
 
-/* Indetifier : %S */
-# print_unt.c
-Function That Prints An Unsigned Integer.
 
-/* Indetifier : %u */
-# print_rev.c
-Function That Writes The String To Stdout In Reverse.
-
-/* Indetifier : %r */
-# print_rot.c
-Function That Writes The String To Stdout In Rot13.
-
-/* Indetifier : %R */
-# print_add.c
-Function That Prints The Address Of An Input Variable.
-
-/* Indetifier : %p */
-# print_long_oct.c
-Function That Prints Long Decimal Number In Octal.
-
-/* Indetifier : %lo */
-# print_long_hex.c
-Function That Prints Long Decimal Number In Hexadecimal.
-
-/* Indetifier : %lx */
-# print_long_int.c
-Function That Prints A Long Integer.
-
-/* Indetifier : %li */
-# print_long_upx.c
-Function That Prints A Long Decimal In Uppercase Hexadecimal.
-
-/* Indetifier : %lX */
-# print_long_unt.c
-Function That Prints A Long Unsigned Integer.
-
-/* Indetifier : %lu */
-# print_short_oct.c
-Function That Prints Short Decimal Number In Octal.
-
-/* Indetifier : %ho */
-# print_short_hex.c
-Function That Prints Short Decimal Number In Hexadecimal.
-
-/* Indetifier : %hx */
-# print_short_int.c
-Function That Prints A Short Integer.
-
-# print_short_upx.c
-Function That Prints A Short Decimal In Uppercase Hexadecimal.
-
-/* Indetifier : %hX */
-# print_short_unt.c
-Function That Prints A Short Unsigned Integer.
-
-/* Indetifier : %hu */
-# print_num_hex.c
-Function That Print A Number In Hexadecimal Begining With 0 And x.
-
-/* Indetifier : %#x */
-# print_num_oct.c
-Function That Prints A Number In Octal Begining With 0 And o.
-
-/* Indetifier : %#o */
-# print_num_upx.c
-Function That Prints A Number In Uppercase Hexadecimal.
-
-/* Indetifier : %#X */
-# print_plus_int.c
-Function That Prints An Integer With Plus Symbol.
-
-/* Indetifier : %+i */
-# print_space_int.c
-Function That Prints An Integer Begining With 0 And u.
-
-/* Indetifier : % i */
-# ev_print_func.c
-Function That Returns The Amount Of Indetifiers.
-
+All files are interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
 
 # Authors
 
