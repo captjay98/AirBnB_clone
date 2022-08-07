@@ -13,7 +13,7 @@ class BaseModel:
     """
 
     def __init__(self, *args, **kwargs):
-        """initialize a BaseModel object"""
+        """create a new BaseModel object"""
 
         from models import storage
         if kwargs:
