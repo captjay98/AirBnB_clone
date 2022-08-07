@@ -16,7 +16,7 @@ The first line of all our files are exactly #!/usr/bin/python3.
 # Test files
 
 
-All test files are inside the folder tests
+All test files are inside the folder tests.
 
 # Module
 
