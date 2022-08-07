@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Place class that inherits from BaseClass"""
+"""Place the class that derives from BaseClass here."""
 from models.base_model import BaseModel
 
 
