@@ -21,12 +21,12 @@ classes = ["BaseModel",
            "City",
            "Amenity",
            "Review"]
-options = ['create',
-        'show',
-        'update',
-        'all',
-        'destroy',
-        'count']
+options = ["create",
+           "show",
+           "update",
+           "all",
+           "destroy",
+           "count"]
 
 
 class HBNBCommand(cmd.Cmd):
@@ -44,7 +44,6 @@ class HBNBCommand(cmd.Cmd):
             if class_name[0] in classes and command[0] in options:
                 arg = command[0] + ' ' + class_name[0] + ' ' + argv[0]
         return arg
-    
 
     def do_quit(self, arg):
         """To exit the program, use the Quit command."""
@@ -60,7 +59,8 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """Creates a new BaseModel instance, saves it to json, and prints the Id."""
+        """Creates a new BaseModel instance, saves it to json,
+        and prints the Id."""
 
         if not arg:
             print("** class name missing **")
@@ -72,7 +72,8 @@ class HBNBCommand(cmd.Cmd):
             print(new_instance.id)
 
     def do_show(self, arg):
-        """The string representation of an instance based on the class name and id is printed."""
+        """The string representation of an instance based
+        on the class name and id is printed."""
         if not arg:
             print("** class name missing **")
         else:
@@ -110,7 +111,8 @@ class HBNBCommand(cmd.Cmd):
                     print("** no instance found **")
 
     def do_all(self, arg):
-        """Prints all string representations of all instances, whether or not they are based on the class name."""
+        """Prints all string representations of all instances,
+         whether or not they are based on the class name."""
         argv = arg.split(' ')
         if not arg:
             print([str(obj) for obj in storage.all().values()])
@@ -123,7 +125,9 @@ class HBNBCommand(cmd.Cmd):
                 print(new)
 
     def do_update(self, arg):
-        """Updates an instance using the class name and id by adding or updating attributes and saving the changes to the JSON file."""
+        """Updates an instance using the class name and id
+        by adding or updating attributes and saving the
+        changes to the JSON file."""
         if not arg:
             print("** class name missing **")
         else:
@@ -146,6 +150,7 @@ class HBNBCommand(cmd.Cmd):
                             else:
                                 setattr(storage.all()[key], argv[2], argv[3])
                                 storage.all()[key].save()
+
     def do_count(self, arg):
         """Count the number of instances of a class."""
         argv = arg.split(' ')
