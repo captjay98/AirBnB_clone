@@ -21,7 +21,7 @@ All test files are inside the folder tests.
 # Module
 
 
-Unittest moodule was used in the project
+Unittest moodule was used in the project.
 
 # Length of files
 
