@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""program that contains the entry point of the command interpreter"""
+"""program containing the command interpreter's entry point"""
 
 
 import cmd
