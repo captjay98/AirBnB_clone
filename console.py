@@ -6,6 +6,12 @@ import cmd
 import string
 from models.base_model import BaseModel
 from models import storage
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 classes = ["BaseModel",
            "User",
@@ -27,7 +33,7 @@ class HBNBCommand(cmd.Cmd):
         print("quitting")
         raise SystemExit
 
-    def do_EOF():
+    def do_EOF(self, arg):
         """Program exits using EOF"""
         return True
 
