@@ -6,27 +6,27 @@ This is our take on the AirBnB clone written in python, it is a project for the 
 
 # Allowed editors 
 
-Allowed editors are vi,vim and emacs
+Allowed editors are vi,vim and emacs.
 
 # First line of each file
 
 
-The first line of all our files are exactly #!/usr/bin/python3
+The first line of all our files are exactly #!/usr/bin/python3.
 
 # Test files
 
 
-All test files are inside the folder tests
+All test files are inside the folder tests.
 
 # Module
 
 
-Unittest moodule was used in the project
+Unittest moodule was used in the project.
 
 # Length of files
 
 
-Length of files were tested using wc
+Length of files were tested using wc.
 
 # Function Documentation 
 
@@ -47,21 +47,21 @@ python3 -c 'print(__import__("my_module").MyClass.__doc__)'
 # File Execution
 
 
-All files are executed using this command: python3 -m unittest discover tests
+All files are executed using this command: python3 -m unittest discover tests.
 
 # File extension
 
 
-File extension is .py
+File extension is .py .
 
 # Non-interactive mode
 
-All tests also pass in non-interactive mode: $ echo "python3 -m unittest discover tests" | bash
+All tests also pass in non-interactive mode: $ echo "python3 -m unittest discover tests" | bash .
 
 # Interpretion and compilation
 
 
-All files are interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
+All files are interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5).
 
 # Authors
 

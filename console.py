@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""program containing the command interpreter's entry point"""
+"""Program containing the command interpreter's entry point."""
 
 
 import cmd
@@ -30,7 +30,7 @@ options = ['create',
 
 
 class HBNBCommand(cmd.Cmd):
-    """HBNB command interpreter"""
+    """HBNB command interpreter."""
 
     prompt = "(hbnb)"
     intro = "Welcome to the HBNB Command Interpreter"
@@ -110,7 +110,7 @@ class HBNBCommand(cmd.Cmd):
                     print("** no instance found **")
 
     def do_all(self, arg):
-        """prints all string representations of all instances, whether or not they are based on the class name"""
+        """Prints all string representations of all instances, whether or not they are based on the class name."""
         argv = arg.split(' ')
         if not arg:
             print([str(obj) for obj in storage.all().values()])

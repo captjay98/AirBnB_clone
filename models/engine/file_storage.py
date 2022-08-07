@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""class for serializing and deserializing JSON instances"""
+"""class for serializing and deserializing JSON instances."""
 
 from json import load, dump
 from os.path import exists
@@ -13,24 +13,24 @@ from models.review import Review
 
 
 class FileStorage:
-    """The FileStorage class"""
+    """The FileStorage class."""
 
     __file_path = "file.json"
     __objects = dict()
 
     def all(self):
-        """ __objects dictionary is returned"""
+        """ __objects dictionary is returned."""
         return FileStorage.__objects
 
     def new(self, obj):
-        """sets the obj with key obj class name>.id in __objects"""
+        """sets the obj with key obj class name>.id in __objects."""
         name = obj.__class__.__name__
         i_d = obj.id
         key = name + "." + i_d
         FileStorage.__objects[key] = obj
 
     def save(self):
-        """__objects are serialized to the JSON file path: __file path"""
+        """__objects are serialized to the JSON file path: __file path."""
         store_dict = dict()
         with open(FileStorage.__file_path, 'w') as f:
             for k, v in FileStorage.__objects.items():

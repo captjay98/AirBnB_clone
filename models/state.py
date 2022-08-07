@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""State class that derives from BaseClass"""
+"""State class that derives from BaseClass."""
 from models.base_model import BaseModel
 
 

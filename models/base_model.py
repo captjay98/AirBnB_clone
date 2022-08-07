@@ -13,7 +13,7 @@ class BaseModel:
     """
 
     def __init__(self, *args, **kwargs):
-        """create a new BaseModel object"""
+        """create a new BaseModel object."""
 
         from models import storage
         if kwargs:
@@ -35,7 +35,7 @@ class BaseModel:
                                       self.id, self.__dict__))
 
     def save(self):
-        """saves to json and updates to the current time"""
+        """Saves to json and updates to the current time."""
         from models import storage
         self.updated_at = datetime.now()
         storage.save()
