@@ -38,7 +38,7 @@ class FileStorage:
             dump(store_dict, f)
 
     def reload(self):
-        """deserializes the JSON file to __objects"""
+        """The JSON file is deserialized to __objects."""
         my_dic = dict()
         if (exists(FileStorage.__file_path)):
             with open(FileStorage.__file_path, 'r') as f:
