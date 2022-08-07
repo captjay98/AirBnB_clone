@@ -3,16 +3,9 @@
 
 
 import cmd
+import string
 from models.base_model import BaseModel
 from models import storage
-
-from models.base_model import BaseModel
-from models.user import User
-from models.state import State
-from models.city import City
-from models.amenity import Amenity
-from models.place import Place
-from models.review import Review
 
 classes = ["BaseModel",
            "User",
@@ -27,9 +20,11 @@ class HBNBCommand(cmd.Cmd):
     """the HBNB cmd interpreter"""
 
     prompt = "(hbnb)"
+    intro = "Welcome to the HBNB Command Interpreter"
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
+        print("quitting")
         raise SystemExit
 
     def do_EOF():
@@ -95,16 +90,16 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, arg):
         """prints all string representation of all instances
         based or not on the class name"""
-
-        if arg not in classes:
-            print("** class doesn't exist **")
+        argv = arg.split(' ')
         if not arg:
             print([str(obj) for obj in storage.all().values()])
         else:
-            argv = arg.split(' ')
-            new = ([str(obj) for obj in storage.all().values()
-                    if argv[0] in str(obj)])
-            print(new)
+            if argv[0] not in classes:
+                print("** class doesn't exist **")
+            else:
+                new = ([str(obj) for obj in storage.all().values()
+                        if argv[0] in str(obj)])
+                print(new)
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id
