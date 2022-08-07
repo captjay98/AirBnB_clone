@@ -4,7 +4,7 @@ from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """creates a new instance of Place"""
+    """creates a new Place instance"""
     city_id = ""
     user_id = ""
     name = ""
