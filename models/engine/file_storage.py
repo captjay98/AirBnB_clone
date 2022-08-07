@@ -13,7 +13,7 @@ from models.review import Review
 
 
 class FileStorage:
-    """The FileStorage class"""
+    """The FileStorage class."""
 
     __file_path = "file.json"
     __objects = dict()
