@@ -5,7 +5,7 @@ from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """Creates a new User object"""
+    """This method creates a new User object."""
 
     email = ""
     password = ""
