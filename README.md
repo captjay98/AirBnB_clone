@@ -47,7 +47,7 @@ python3 -c 'print(__import__("my_module").MyClass.__doc__)'
 # File Execution
 
 
-All files are executed using this command: python3 -m unittest discover tests
+All files are executed using this command: python3 -m unittest discover tests.
 
 # File extension
 
