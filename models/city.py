@@ -4,7 +4,7 @@
 from models.base_model import BaseModel
 
 
-class City:
+class City(BaseModel):
     """creates city object"""
 
     state_id = ""
