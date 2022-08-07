@@ -1,13 +1,11 @@
 #!/usr/bin/python3
 """Testing BaseModel using unitest"""
 
-from lib2to3.pytree import Base
+
 import unittest
 from datetime import datetime
-
-from pyrsistent import b, s
 from models.base_model import BaseModel
-import os
+
 
 
 class TestBaseModel(unittest.TestCase):
