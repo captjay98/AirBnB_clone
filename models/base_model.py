@@ -41,7 +41,7 @@ class BaseModel:
         storage.save()
 
     def to_dict(self):
-        """Returns a dictionary of all key/value pairs of the instance"""
+        """Returns a dictionary containing all of the instance's key/value pairs."""
         my_dict = self.__dict__.copy()
         my_dict["__class__"] = self.__class__.__name__
         for k, v in self.__dict__.items():
