@@ -3,6 +3,7 @@
 
 
 import cmd
+from posixpath import split
 import string
 from models.base_model import BaseModel
 from models import storage
@@ -133,6 +134,14 @@ class HBNBCommand(cmd.Cmd):
                             else:
                                 setattr(storage.all()[key], argv[2], argv[3])
                                 storage.all()[key].save()
+    def do_count(self, arg):
+        """Retrieve number of instances of a class"""
+        argv = arg.split(' ')
+        count = 0
+        for obj in models.storage.all().values():
+            if argv[0] == type(obj).__name__:
+                count += 1
+        print(count)
 
 
 if __name__ == '__main__':
