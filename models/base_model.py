@@ -9,8 +9,7 @@ from datetime import datetime
 
 class BaseModel:
     """
-    Creates a BaseModel Class that
-    other classes will inherit from
+    Creates a BaseModel Class from which other classes will inherit.
     """
 
     def __init__(self, *args, **kwargs):
