@@ -30,7 +30,7 @@ class HBNBCommand(cmd.Cmd):
     intro = "Welcome to the HBNB Command Interpreter"
 
     def do_quit(self, arg):
-        """Quit command to exit the program"""
+        """To exit the program, use the Quit command."""
         print("quitting")
         raise SystemExit
 
