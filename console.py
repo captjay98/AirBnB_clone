@@ -39,7 +39,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
-        """Does nothing"""
+        """Nothing is accomplished."""
         pass
 
     def do_create(self, arg):
