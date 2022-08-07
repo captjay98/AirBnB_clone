@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""class that inherits from BaseClass"""
+"""class descended from BaseClass"""
 from models.base_model import BaseModel
 
 
