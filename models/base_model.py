@@ -40,7 +40,6 @@ class BaseModel:
         """updates to the current time and saves to json"""
         from models import storage
         self.updated_at = datetime.now()
-        storage.new(self)
         storage.save()
 
     def to_dict(self):
