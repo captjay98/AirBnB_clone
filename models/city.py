@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""City class descended from BaseClass"""
+"""City class descended from BaseClass."""
 
 from models.base_model import BaseModel
 
