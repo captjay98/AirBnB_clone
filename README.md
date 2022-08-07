@@ -52,7 +52,7 @@ All files are executed using this command: python3 -m unittest discover tests.
 # File extension
 
 
-File extension is .py
+File extension is .py .
 
 # Non-interactive mode
 
