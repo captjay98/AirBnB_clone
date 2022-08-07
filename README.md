@@ -61,7 +61,7 @@ All tests also pass in non-interactive mode: $ echo "python3 -m unittest discove
 # Interpretion and compilation
 
 
-All files are interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
+All files are interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5).
 
 # Authors
 
