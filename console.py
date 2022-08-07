@@ -35,7 +35,7 @@ class HBNBCommand(cmd.Cmd):
         raise SystemExit
 
     def do_EOF(self, arg):
-        """Program exits using EOF"""
+        """The program terminates with EOF."""
         return True
 
     def emptyline(self):
