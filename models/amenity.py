@@ -5,5 +5,5 @@ from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    """Creates an amenity object"""
+    """This function generates an amenity object."""
     name = ""
