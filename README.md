@@ -11,7 +11,7 @@ Allowed editors are vi,vim and emacs.
 # First line of each file
 
 
-The first line of all our files are exactly #!/usr/bin/python3
+The first line of all our files are exactly #!/usr/bin/python3.
 
 # Test files
 
