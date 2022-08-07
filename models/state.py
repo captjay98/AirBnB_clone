@@ -4,5 +4,5 @@ from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """Creates new state object"""
+    """Makes a new state object."""
     name = ""
