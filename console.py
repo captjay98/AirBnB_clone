@@ -24,7 +24,7 @@ classes = ["BaseModel",
 
 
 class HBNBCommand(cmd.Cmd):
-    """the HBNB cmd interpreter"""
+    """HBNB command interpreter"""
 
     prompt = "(hbnb)"
     intro = "Welcome to the HBNB Command Interpreter"
