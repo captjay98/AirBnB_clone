@@ -3,7 +3,7 @@
 from models.base_model import BaseModel
 
 
-class Place:
+class Place(BaseModel):
     """creates a new instance of Place"""
     city_id = ""
     user_id = ""
