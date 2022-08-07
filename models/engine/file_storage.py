@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""class for serializing and deserializing JSON instances"""
+"""class for serializing and deserializing JSON instances."""
 
 from json import load, dump
 from os.path import exists
