@@ -21,6 +21,12 @@ classes = ["BaseModel",
            "City",
            "Amenity",
            "Review"]
+options = ['create',
+        'show',
+        'update',
+        'all',
+        'destroy',
+        'count']
 
 
 class HBNBCommand(cmd.Cmd):
@@ -28,6 +34,17 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb)"
     intro = "Welcome to the HBNB Command Interpreter"
+
+    def precmd(self, arg):
+        """parses command input"""
+        if '.' in arg and '(' in arg and ')' in arg:
+            class_name = arg.split('.')
+            command = class_name[1].split('(')
+            argv = command[1].split(')')
+            if class_name[0] in classes and command[0] in options:
+                arg = command[0] + ' ' + class_name[0] + ' ' + argv[0]
+        return arg
+    
 
     def do_quit(self, arg):
         """To exit the program, use the Quit command."""
