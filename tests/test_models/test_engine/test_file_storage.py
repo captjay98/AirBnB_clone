@@ -37,5 +37,6 @@ class TestFileStorageInit(unittest.TestCase):
         """Tests storage created in __init__.py"""
         self.assertEqual(type(models.storage), FileStorage)
 
+
 if __name__ == "__main__":
     unittest.main()
