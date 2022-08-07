@@ -56,7 +56,7 @@ File extension is .py .
 
 # Non-interactive mode
 
-All tests also pass in non-interactive mode: $ echo "python3 -m unittest discover tests" | bash
+All tests also pass in non-interactive mode: $ echo "python3 -m unittest discover tests" | bash .
 
 # Interpretion and compilation
 
