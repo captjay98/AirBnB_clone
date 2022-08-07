@@ -6,7 +6,7 @@ This is our take on the AirBnB clone written in python, it is a project for the 
 
 # Allowed editors 
 
-Allowed editors are vi,vim and emacs
+Allowed editors are vi,vim and emacs.
 
 # First line of each file
 
