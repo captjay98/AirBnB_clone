@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-The BaseModel class defines all of the common attributes and methods for other classes.
+The BaseModel class defines all of the common
+attributes and methods for other classes.
 """
 
 from uuid import uuid4
@@ -9,7 +10,8 @@ from datetime import datetime
 
 class BaseModel:
     """
-    Creates a BaseModel Class from which other classes will inherit.
+    Creates a BaseModel Class from which other
+    classes will inherit.
     """
 
     def __init__(self, *args, **kwargs):
@@ -41,7 +43,8 @@ class BaseModel:
         storage.save()
 
     def to_dict(self):
-        """Returns a dictionary containing all of the instance's key/value pairs."""
+        """Returns a dictionary containing all of the instance's
+        key/value pairs."""
         my_dict = self.__dict__.copy()
         my_dict["__class__"] = self.__class__.__name__
         for k, v in self.__dict__.items():
